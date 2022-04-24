@@ -208,7 +208,7 @@ public class UpdateCustomer extends javax.swing.JFrame {
           try{
               Connection con=connectionProvider.getcon();
               Statement st=con.createStatement();
-              st.executeUpdate("update customer set name='"+name+"',contactNo='"+contactNo+"',email='"+email+"',address='"+address+"',gender='"+gender+"' where contactNo='"+contactNoold+"'");
+              st.executeUpdate("update customr set name='"+name+"',mobno='"+contactNo+"',email='"+email+"',addr='"+address+"',gender='"+gender+"' where mobNo='"+contactNoold+"'");
               JOptionPane.showMessageDialog(null,"Successfully updated ");
               setVisible(false);
               new UpdateCustomer().setVisible(true);
@@ -224,14 +224,14 @@ public class UpdateCustomer extends javax.swing.JFrame {
            try{
               Connection con=connectionProvider.getcon();
               Statement st=con.createStatement();
-              ResultSet rs = st.executeQuery("select *from customer where contactNo =  '"+contactNo+"'");
+              ResultSet rs = st.executeQuery("select *from customr where mobno =  '"+contactNo+"'");
               if(rs.next())
               {
-                  tfupdatename.setText(rs.getString(1));
-                  tfupdatecontact.setText(rs.getString(2));
-                  tfupdaeemailid.setText(rs.getString(3));
-                  tfupdateaddress.setText(rs.getString(4));
-                  comboboxupdategender.setSelectedItem(rs.getString(5));
+                  tfupdatename.setText(rs.getString(2));
+                  tfupdatecontact.setText(rs.getString(4));
+                  tfupdaeemailid.setText(rs.getString(5));
+                  tfupdateaddress.setText(rs.getString(3));
+                  comboboxupdategender.setSelectedItem(rs.getString(6));
                   
                  // tfupdatecontact.setEditable(false);
               }

@@ -328,13 +328,13 @@ public class Billing extends javax.swing.JFrame {
            try{
               Connection con=connectionProvider.getcon();
               Statement st=con.createStatement();
-              ResultSet rs = st.executeQuery("select *from customr where name like  '"+name+"%'");
+              ResultSet rs = st.executeQuery("select * from customr where name like '"+name+"%'");
               if(rs.next())
               {
-                  tfbillingname.setText(rs.getString(1));
-                  tfbillingcontactno.setText(rs.getString(2));
-                  tfbillingemailid.setText(rs.getString(3));
-                  tfbillingaddress.setText(rs.getString(4));
+                  tfbillingname.setText(rs.getString(2));
+                  tfbillingcontactno.setText(rs.getString(4));
+                  tfbillingemailid.setText(rs.getString(5));
+                  tfbillingaddress.setText(rs.getString(3));
                   
                   
                  // tfupdatecontact.setEditable(false);
@@ -357,14 +357,13 @@ public class Billing extends javax.swing.JFrame {
            try{
               Connection con=connectionProvider.getcon();
               Statement st=con.createStatement();
-              ResultSet rs = st.executeQuery("select *from customr where contactNo like  '"+contactno+"%'");
+              ResultSet rs = st.executeQuery("select * from customr where contactNo like  '"+contactno+"%'");
               if(rs.next())
               {
-                  tfbillingname.setText(rs.getString(1));
-                  tfbillingcontactno.setText(rs.getString(2));
-                  tfbillingemailid.setText(rs.getString(3));
-                  tfbillingaddress.setText(rs.getString(4));
-                  
+                  tfbillingname.setText(rs.getString(2));
+                  tfbillingcontactno.setText(rs.getString(4));
+                  tfbillingemailid.setText(rs.getString(5));
+                  tfbillingaddress.setText(rs.getString(3));
                   
                  // tfupdatecontact.setEditable(false);ddd
               }
@@ -518,7 +517,7 @@ public class Billing extends javax.swing.JFrame {
             String contactNo = tfbillingcontactno.getText();
             String email = tfbillingemailid.getText();
             String address = tfbillingaddress.getText();
-            String path = "D:\\saket\\Programming\\Java\\Project\\billing_Management_System\\BillingManagementSystem\\";//D:\\saket\\Programming\\Java\\Project\\billing_Management_System\\BillingManagementSystem\\
+            String path = "C:\\aMY PC\\Saket\\Project\\billing_Management_System\\BillingManagementSystem";//D:\\saket\\Programming\\Java\\Project\\billing_Management_System\\BillingManagementSystem\\
             com.itextpdf.text.Document doc = new com.itextpdf.text.Document();
             try{
                 

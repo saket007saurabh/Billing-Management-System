@@ -181,18 +181,18 @@ public class DeleteCustomer extends javax.swing.JFrame {
         try{
             Connection con=connectionProvider.getcon();
             Statement st=con.createStatement();
-            ResultSet rs = st.executeQuery("select *from customer where contactNo =  '"+contactNo+"'");
+            ResultSet rs = st.executeQuery("select *from customr where mobNo =  '"+contactNo+"'");
             if(rs.next())
             {
-                tfdeletename.setText(rs.getString(1));
+                tfdeletename.setText(rs.getString(2));
                 tfdeletename.setEditable(false);
-                tfdeletecontact.setText(rs.getString(2));
+                tfdeletecontact.setText(rs.getString(4));
                 tfdeletecontact.setEditable(false);
-                tfdeleteemailid.setText(rs.getString(3));
+                tfdeleteemailid.setText(rs.getString(5));
                 tfdeleteemailid.setEditable(false);
-                tfdeleteaddress.setText(rs.getString(4));
+                tfdeleteaddress.setText(rs.getString(3));
                 tfdeleteaddress.setEditable(false);
-                comboboxdeletegender.setSelectedItem(rs.getString(5));
+                comboboxdeletegender.setSelectedItem(rs.getString(6));
                 comboboxdeletegender.setEditable(false);
 
                 // tfupdatecontact.setEditable(false);
@@ -233,7 +233,7 @@ public class DeleteCustomer extends javax.swing.JFrame {
         try{
             Connection con=connectionProvider.getcon();
             Statement st=con.createStatement();//delete from customer where contactNo='a';
-            st.executeUpdate("delete from customer where contactNo='"+contactNoold+"'");
+            st.executeUpdate("delete from customr where mobNo='"+contactNoold+"'");
             JOptionPane.showMessageDialog(null,"Successfully Deleted ");
             setVisible(false);
             new DeleteCustomer().setVisible(true);
